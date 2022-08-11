@@ -1,0 +1,7 @@
+My name is manas
+I am MAnas from COEP
+Computer Enginnering studentmanas
+manas is a SY student
+This is DSA project
+grep is a linux command 
+Linux suppotrs GREP 
