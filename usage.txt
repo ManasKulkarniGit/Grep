@@ -1,0 +1,49 @@
+	Default usage without using flags/options
+
+./mygrep pattern filename 
+./mygrep pattern1 file1 file2 file3....... //grep for multiple files
+
+
+	Default usage with flags/options
+
+./mygrep -option pattern filename
+
+-v, -w, -i
+./mygrep -option filename //works with multiple files too
+
+-h, -H
+./mygrep -H pattern file1 file2 file3.....//for single as well as multiple files
+
+./mygrep -m NUMBER pattern filename
+
+./mygrep -e pattern filename
+./mygrep -e pattern filename -e pattern2 filename2...
+
+
+	Combinations
+
+-cw, -ci, -vi, -cv, -cvi, -cvw, -vw, -iw
+Usage : ./mygrep -option pattern filename //all above have same usage and works for multiple files too
+
+./mygrep -n -v -H pattern filename
+./mygrep -v -n -H pattern filename
+./mygrep -v -n -h pattern filename
+./mygrep -n -v -h pattern filename
+./mygrep -n -v pattern filename
+./mygrep -v -n pattern filename
+ ./mygrep -n -h pattern filename
+./mygrep -n -option -h pattern filename
+./mygrep -option -n -h pattern filename
+./mygrep -n -option pattern filename
+./mygrep -option -n pattern filename
+./mygrep -n -H pattern filename // in place of -n could be v or i or w or c
+
+
+./mygrep -m NUMBER -H pattern filename //for multiple files too
+./mygrep -m NUMBER -h pattern filename //for multiple files too
+./mygrep -m NUMBER -n pattern filename //for multiple files too
+./mygrep -m NUMBER -n -h pattern filename
+./mygrep -m NUMBER -n -H pattern filename
+./mygrep -i -e pattern filename //could be -v, -w or -c in place of -i
+./mygrep -option -e pattern1 file1 -option -e pattern2 file2....
+./mygrep -m NUMBER -e pattern filename -option -e pattern filename
