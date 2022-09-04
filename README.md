@@ -1,10 +1,6 @@
 # GREP [Global Regular Expression Print]
 <p>grep is a command-line utility for searching plain-text data sets for lines that match a regular expression.</p><br>
-<p>Implementation is done using <b>Boyer Moore pattern searching algorithm.</b>
-<ul>
-<li>Bad Character Heuristic </li>
-<li>Good Suffix Heuristic </li>
-</ul>
+
 
 ### Installation
 
