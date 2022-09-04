@@ -8,8 +8,8 @@
 
 
 void usage() {
-    printf("  DSA MINIPROJECT GREP\n");
-    printf("  --Anjali Dofe, MIS No. 111903137\n");
+    
+    
     printf("  Usage :  grep [OPTION...] PATTERNS [FILE...]\n");
     printf("  --help : outputs a usage message and exits\n");
     printf("  -V or --version : outputs version number of GREP and exits\n");

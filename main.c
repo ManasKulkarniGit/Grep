@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
     }
     else if((strcmp(argv[1], "-V") == 0 || strcmp(argv[1], "--version") == 0) && argv[2] == NULL){
         printf("  Version of GREP is DSA project version 2021\n");
-        printf("  COPYRIGHT 2021 by Anjali Ajay Dofe");
+        
         system("Color 50");
         exit(0);
     }
@@ -105,7 +105,7 @@ int main(int argc, char *argv[]){
             }
         }
         else if(argv[1][0] == '-' && argv[1][1] == 'm' && (strcmp(argv[3],"-e") != 0)){ //for -m
-            if(strcmp(argv[3],"-H") == 0){ //format ./anjaligrep -m NUMBER -H pattern filename
+            if(strcmp(argv[3],"-H") == 0){ 
                 if (argc == 6){
                     flag = 1;
                     option = types(argv[1][1], option);
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]){
                     }
                 }
             }
-            if(strcmp(argv[3],"-h") == 0){//format ./anjaligrep -m NUMBER -h pattern filename
+            if(strcmp(argv[3],"-h") == 0){
                 if (argc == 6){
                     flag = 0;
                     option = types(argv[1][1], option);
@@ -145,14 +145,14 @@ int main(int argc, char *argv[]){
                     }
                 }
             }
-            if (argc == 5 && strcmp(argv[3], "-H") != 0 && (strcmp(argv[3], "-h") != 0)){ //format : ./anjaligrep -m NUMBER pattern filename
+            if (argc == 5 && strcmp(argv[3], "-H") != 0 && (strcmp(argv[3], "-h") != 0)){ 
                 flag = 0;
                 option = types(argv[1][1], option);
                 i = 4;
                 openfile(argv[i], option, argv[3], flag, atoi(argv[2]), 0);
             }
             else if((strcmp(argv[3], "-H") != 0) && argc > 5 && (strcmp(argv[3], "-h") != 0) &&(strcmp(argv[3], "-n") != 0) ){
-                flag = 1;  //format : ./anjaligrep -m NUMBER pattern file1 file2 file3.....
+                flag = 1;  
                 i = 4;
                 while(i < argc){ //for multiple files
                     option = types(argv[1][1], option);
@@ -163,7 +163,7 @@ int main(int argc, char *argv[]){
                 }
             }
             else if((strcmp(argv[3], "-n") == 0) && (strcmp(argv[4], "-h") != 0) && (strcmp(argv[4], "-H") != 0)){
-                int option1 = LINENUMBER;  //format : ./anjaligrep -m NUMBER -n pattern filename
+                int option1 = LINENUMBER;  
                 if (argc == 6){
                     option = types(argv[1][1], option);
                     openfile(argv[5], option,argv[4],0,atoi(argv[2]),option1);
@@ -181,7 +181,7 @@ int main(int argc, char *argv[]){
                 }
             }
             else if((strcmp(argv[3], "-n") == 0) && (strcmp(argv[4], "-h") == 0)){
-                int option1 = LINENUMBER; //format : ./anjaligrep -m NUMBER -n -h pattern filename
+                int option1 = LINENUMBER; 
                 if (argc == 7){
                     option = types(argv[1][1], option);
                     openfile(argv[6], option, argv[5], 0, atoi(argv[2]), option1);
@@ -199,7 +199,7 @@ int main(int argc, char *argv[]){
                 }
             }
             else if((strcmp(argv[3], "-n") == 0) && (strcmp(argv[4], "-H") == 0)){
-                int option1 = LINENUMBER; //format : ./anjaligrep -m NUMBER -n -H pattern filename
+                int option1 = LINENUMBER; 
                 if (argc == 7){
                     option = types(argv[1][1], option);
                     openfile(argv[6], option, argv[5], 1, atoi(argv[2]), option1);
@@ -217,7 +217,7 @@ int main(int argc, char *argv[]){
             }
         }
         else if((strcmp(argv[1], "-m") == 0) || (strcmp(argv[1],"-e") == 0) || (strcmp(argv[2], "-e") == 0)){
-            if((strcmp(argv[1], "-e") == 0)){ //format : ./anjaligrep -e pattern filename
+            if((strcmp(argv[1], "-e") == 0)){ 
                 if (argc == 4){
                     flag = 0;
                     i = 3;
@@ -231,7 +231,7 @@ int main(int argc, char *argv[]){
                     option = EXP;
                     i = 3;
                     j = 2;
-                    while(i < argc + 1){ //multiple patterns // ./anjaligrep -e pattern filename -e pattern2 filename2...
+                    while(i < argc + 1){ 
                         openfile(argv[i], option, argv[j], flag, 0, 0);
                         system("Color 02");
                         printf("\n");
@@ -248,7 +248,7 @@ int main(int argc, char *argv[]){
                     openfile(argv[i], option, argv[3], flag, 0, 0);
                     system("Color 02");
                 }
-                if(argc > 5){ // ./anjaligrep -option -e pattern1 file1 -option -e pattern2 file2....
+                if(argc > 5){ 
                     int j, k = 1; //option
                     flag = 1;
                     i = 4; //filename
@@ -269,12 +269,12 @@ int main(int argc, char *argv[]){
                 }
             }
             else if(strcmp(argv[1], "-m") == 0 && (strcmp( argv[3], "-n") != 0)){
-                if(argc == 6){ // ./anjaligrep -m NUMBER -e pattern filename
+                if(argc == 6){ 
                     option = MAXIMUM;
                     openfile(argv[5], option, argv[4], flag, atoi(argv[2]), 0);
                     system("color 0B");
                 }
-                if(argc > 6){ // ./anjaligrep -m NUMBER -e pattern filename -option -e pattern filename
+                if(argc > 6){ 
                     int j, k = 6;
                     flag = 1;
                     i = 5; //filename
@@ -296,17 +296,17 @@ int main(int argc, char *argv[]){
         else if(argv[2][0] == '-' && argv[2][1] == 'H'){
             int option1 = 0;
             if(argc == 5){
-                if(strcmp(argv[1], "-n") == 0){ // ./anjaligrep -n -H pattern filename
+                if(strcmp(argv[1], "-n") == 0){ 
                     option1 = LINENUMBER;
                     option = EXP;
                 }
                 else{ // c or i or v or w
-                    option = types(argv[1][1], option); // ./anjaligrep -option -H pattern filename
+                    option = types(argv[1][1], option); 
                 }
                 openfile(argv[4], option, argv[3], 1, 0, option1);
                 system("Color 04");
             }
-            if(argc > 5){ // ./anjaligrep -option -H pattern file1 file2 file3...........
+            if(argc > 5){ 
                 flag = 1; //for multiple files
                 i = 4;
                 if(strcmp(argv[1], "-n") == 0){
@@ -325,7 +325,7 @@ int main(int argc, char *argv[]){
             }
         }
         else if(argv[2][0] == '-' && argv[2][1] == 'h'){
-            int option1 = 0;  // ./anjaligrep -n -h pattern filename
+            int option1 = 0;  
             if(argc == 5){
                 if(strcmp(argv[1], "-n") == 0){
                     option1 = LINENUMBER;
@@ -357,7 +357,7 @@ int main(int argc, char *argv[]){
         }
         else if(((strcmp(argv[1],"-n") == 0) && argv[2][0] == '-') || ((strcmp(argv[2], "-n") == 0) && argv[1][0] == '-')){
             int option1 = LINENUMBER;
-            if(strcmp(argv[2], "-h") == 0){ // ./anjaligrep -n -h pattern filename
+            if(strcmp(argv[2], "-h") == 0){ 
                 if(argc == 5){
                     if(strcmp(argv[1],"-n") == 0){
                         openfile(argv[5], EXP, argv[3], 0, 0, option1);
@@ -377,12 +377,12 @@ int main(int argc, char *argv[]){
             }
             if(strcmp(argv[3], "-h") == 0){
                 if(argc == 6){
-                    if(strcmp(argv[1], "-n") == 0){  // ./anjaligrep -n -option -h pattern filename
+                    if(strcmp(argv[1], "-n") == 0){  
                         option = types(argv[2][1], option);
                         openfile(argv[5], option , argv[4], 0, 0, option1);
                         system("Color 04");
                     }
-                    else if(strcmp(argv[2],"-n") == 0){  // ./anjaligrep -option -n -h pattern filename
+                    else if(strcmp(argv[2],"-n") == 0){  
                         option = types(argv[1][1], option);
                         openfile(argv[5], option, argv[4], 0, 0, option1);
                         system("Color 04");
@@ -409,12 +409,12 @@ int main(int argc, char *argv[]){
             }
             else if(strcmp(argv[3], "-H") == 0){
                 if(argc == 6){
-                    if(strcmp(argv[1], "-n") == 0){ // ./anjaligrep -n -option -H pattern filename
+                    if(strcmp(argv[1], "-n") == 0){ 
                         option = types(argv[2][1], option);
                         openfile(argv[5], option, argv[4], 1, 0, option1);
                          system("Color 09");
                     }
-                    else if(strcmp(argv[2], "-n") == 0){ // ./anjaligrep -option -n -H pattern filename
+                    else if(strcmp(argv[2], "-n") == 0){ 
                         option = types(argv[1][1], option);
                         openfile(argv[5], option, argv[4], 1, 0, option1);
                         system("Color 09");
@@ -441,12 +441,12 @@ int main(int argc, char *argv[]){
             }
             if (argc == 5){
                 flag = 0;
-                if(strcmp(argv[1], "-n") == 0){ // ./anjaligrep -n -option pattern filename
+                if(strcmp(argv[1], "-n") == 0){ 
                     option = types(argv[2][1], option);
                     openfile(argv[4], option, argv[3], 0, 0, option1);
                     system("Color 0A");
                 }
-                else if(strcmp(argv[2], "-n") == 0){// ./anjaligrep -option -n pattern filename
+                else if(strcmp(argv[2], "-n") == 0){
                     option = types(argv[1][1], option);
                     openfile(argv[4], option, argv[3], 0, 0, option1);
                     system("Color 0A");
@@ -456,10 +456,10 @@ int main(int argc, char *argv[]){
                 flag = 1;
                 i = 4;
                 while(i < argc){ //for multiple files
-                    if(strcmp(argv[1],"-n") == 0){ // ./anjaligrep -n -option pattern file1 file2 file3...
+                    if(strcmp(argv[1],"-n") == 0){ 
                         option = types(argv[2][1], option);
                     }
-                    else if(strcmp(argv[2],"-n") == 0){ // ./anjaligrep -option -n pattern file1 file2....
+                    else if(strcmp(argv[2],"-n") == 0){ 
                         option = types(argv[1][1], option);
                     }
                     openfile(argv[i], option,argv[3],flag,0, option1);
@@ -470,7 +470,7 @@ int main(int argc, char *argv[]){
         }
 		else if(strcmp(argv[1],"-n") == 0 && (strcmp(argv[3],"-h") != 0)){
 			int option1 = LINENUMBER;
-			if (argc == 4){ // ./anjaligrep -n pattern filename
+			if (argc == 4){ 
 				flag = 0;
 				i = 3;
 				option = EXP;
@@ -563,7 +563,7 @@ int main(int argc, char *argv[]){
         }
         else if(strcmp(argv[1],"-iw") == 0){
             option = CASEINSENSITIVEWHOLE;
-            if (argc == 4){ // format ./anjaligrep -iw pattern <filename>
+            if (argc == 4){ 
                 openfile(argv[3], option, argv[2], 0, 0, 0);
                 system("Color 0B");
             }
